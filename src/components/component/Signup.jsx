@@ -6,8 +6,8 @@ import Link from "next/link";
 export default function Signup() {
     return (
         <>
-            <div className="bg-cover w-screen h-screen flex justify-center items-center bg-slate-800 ">
-                <div className="bg-slate-900 w-3/5 md:w-2/5 h-fit py-6 pb-20 flex flex-col items-center max-w-2xl ">
+            <div className="bg-cover w-screen h-screen flex justify-center items-center bg-slate-800 text-white">
+                <div className="bg-slate-900 w-3/5 md:w-2/5 h-fit py-6 pb-20 flex flex-col items-center max-w-2xl  border-gray-50 border-[1px] ">
                     <h1 className="pt-14 font-semibold text-3xl font-serif">Sign Up</h1>
                     <form action="#" className="flex flex-col text-sm mt-10 md:w-2/3">
                         <label htmlFor="username" className="" >username</label>
@@ -21,7 +21,14 @@ export default function Signup() {
                         <button className="bg-zinc-900 mt-4  my-3 border-[1px] rounded-sm hover:bg-zinc-950 py-2">Sign Up</button>
 
                     </form>
-                    <span className="w-full border-b-[1px] border-opacity-25 border-gray-500  my-4"></span>
+                    <div className="my-4 flex items-center w-full">
+                        <span className="flex-grow h-px bg-gray-500 opacity-25 "></span>
+                        <p className="mx-4">OR</p>
+                        <span className="flex-grow h-px bg-gray-500 opacity-25"></span>
+                    </div>
+
+
+                    {/* <span className="w-full border-b-[1px] border-opacity-25 border-gray-500  my-4"><p>OR</p><span className="w-full border-b-[1px] border-opacity-25 border-gray-500 "></span></span> */}
 
 
                     <form
