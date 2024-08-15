@@ -1,11 +1,9 @@
-import { Homepage } from "@/components/component/homepage";
-import Signup from "@/components/component/Signup";
-import Image from "next/image";
+import React from 'react'
 
-export default function Home() {
+export default function page() {
   return (
-    <>
-      <Signup />
-    </>
+    <div>
+      hello from home page
+    </div>
   )
 }
