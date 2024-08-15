@@ -8,7 +8,7 @@ export default function Signin() {
           <h1 className="pt-14 font-semibold text-3xl font-serif">Sign In</h1>
           <form action="#" className="flex flex-col text-sm mt-10 md:w-2/3">
             <label htmlFor="username" className="">
-              username
+              Username
             </label>
             <input
               type="text"
@@ -16,7 +16,7 @@ export default function Signin() {
               className="focus:outline-none  bg-transparent border-b border-blue-300 mb-4"
             />
             <label htmlFor="password" className="">
-              password
+              Password
             </label>
             <input
               type="password"
