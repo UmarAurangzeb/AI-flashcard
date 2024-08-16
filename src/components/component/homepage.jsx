@@ -23,7 +23,7 @@ import { Card, CardContent, CardFooter } from "@/components/ui/card"
 import { Pagination, PaginationContent, PaginationItem, PaginationPrevious, PaginationLink, PaginationNext } from "@/components/ui/pagination"
 import Link from "next/link"
 
-export function Homepage() {
+export default function Homepage() {
   return (
     <div className="flex flex-col h-full">
       <header className="bg-primary text-primary-foreground py-4 px-6 flex items-center justify-between">

@@ -42,6 +42,37 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
         },
     }),
     ],
+    callbacks: {
+        async session({ session }) {
+            return session;
+        },
+        async signIn({ profile }) {
+            try {
+                const user = await prisma.user.findUnique({
+                    where: {
+                        email: profile?.email,
+                    },
+
+                })
+                if (user) {
+                    console.log("user already exists");
+                    return true;
+                }
+                const createUser = await prisma.user.create({
+                    data: {
+                        email: profile?.email,
+                    }
+                })
+                if (!createUser) {
+                    return false;
+                }
+                console.log(`User created`);
+                return true
+            } catch (e) {
+                console.log("error");
+            }
+        }
+    },
     pages: {
         signIn: "/signin"
     },
