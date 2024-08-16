@@ -3,7 +3,7 @@
 import { useStripe, useElements, CardElement } from "@stripe/react-stripe-js";
 import { StripeCardElementOptions } from "@stripe/stripe-js";
 
-const CheckoutForm: React.FC = ({}) => {
+const CheckoutForm: React.FC = ({ }) => {
   const stripe = useStripe();
   const elements = useElements();
 
