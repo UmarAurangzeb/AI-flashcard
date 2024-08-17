@@ -23,8 +23,10 @@ export default function Signin() {
                 password,
                 redirect: false,
             });
+            console.log(response);
             if (!response.error) {
-                router.push("/Dashboard")
+                console.log("aaa")
+                router.push("/dashboard")
 
             }
             if (!response.ok) {
@@ -52,8 +54,8 @@ export default function Signin() {
                         <label htmlFor="password" className="">password</label>
                         <input type="password"  {...register("password")} id="password" className="focus:outline-none  bg-transparent border-b border-blue-300" />
                         {errors.password && <div className='text-red-600'>{errors.password.message}</div>}
-                        <Link href={'/'} className="text-xs text-gray-400 pt-1 underline underline-offset-2 opacity-80 hover:opacity-100 mt-1 md:text-sm w-full">Dont have an account?</Link>
-                        <button className="bg-zinc-900 mt-4  my-3 border-[1px] rounded-sm hover:bg-zinc-950 py-2" type="submit">{isSubmitting ? "Submitting..." : "Sign Up"}</button>
+                        <Link href={'/signup'} className="text-xs text-gray-400 pt-1 underline underline-offset-2 opacity-80 hover:opacity-100 mt-1 md:text-sm w-full">Dont have an account?</Link>
+                        <button className="bg-zinc-900 mt-4  my-3 border-[1px] rounded-sm hover:bg-zinc-950 py-2" type="submit">{isSubmitting ? "Submitting..." : "Sign In"}</button>
                     </form>
                 </div>
             </div>
