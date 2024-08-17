@@ -45,7 +45,7 @@ export default function Signin() {
             onSubmit={handleSubmit(onSubmit)}
           >
             <label htmlFor="username" className="">
-              email
+              Email
             </label>
             <input
               type="text"
@@ -58,7 +58,7 @@ export default function Signin() {
               <div className="text-red-600">{errors.email.message}</div>
             )}
             <label htmlFor="password" className="">
-              password
+              Password
             </label>
             <input
               type="password"

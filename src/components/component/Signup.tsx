@@ -50,7 +50,7 @@ export default function Signup({ children }: { children?: React.ReactNode }) {
             onSubmit={handleSubmit(onSubmit)}
           >
             <label htmlFor="email" className="">
-              email
+              Email
             </label>
             <input
               type="text"
@@ -63,7 +63,7 @@ export default function Signup({ children }: { children?: React.ReactNode }) {
               <div className="text-red-600">{errors.email.message}</div>
             )}
             <label htmlFor="password" className="mt-4">
-              password
+              Password
             </label>
             <input
               type="password"
