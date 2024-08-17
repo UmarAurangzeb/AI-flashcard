@@ -1,8 +1,8 @@
-"use client"
+"use client";
 // import { Homepage } from "@/components/component/homepage";
 import Signup from "@/components/component/Signup";
 import Image from "next/image";
-import { signIn } from "@/auth"
+import { signIn } from "@/auth";
 import { FaGoogle } from "react-icons/fa";
 import { FaGithub } from "react-icons/fa";
 import { Elements } from "@stripe/react-stripe-js";

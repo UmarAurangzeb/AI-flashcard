@@ -1,13 +1,13 @@
-"use client"
-import Link from 'next/link'
-import React from 'react'
-import { signIn } from 'next-auth/react'
-import { useForm, SubmitHandler } from "react-hook-form"
-import { zodResolver } from '@hookform/resolvers/zod';
-import { z } from "zod"
-import { registerschema } from "../../types/zod/schema"
-import Router, { useRouter } from 'next/navigation'
-type FormFields = z.infer<typeof registerschema>
+"use client";
+import Link from "next/link";
+import React from "react";
+import { signIn } from "next-auth/react";
+import { useForm, SubmitHandler } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { z } from "zod";
+import { registerschema } from "../../types/zod/schema";
+import Router, { useRouter } from "next/navigation";
+type FormFields = z.infer<typeof registerschema>;
 export default function Signin() {
     const router = useRouter();
     const { register, handleSubmit, watch, formState: { errors, isSubmitting } } = useForm<FormFields>(
@@ -61,5 +61,4 @@ export default function Signin() {
             </div>
         </>
     );
-
 }

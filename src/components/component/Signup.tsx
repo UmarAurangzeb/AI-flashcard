@@ -1,13 +1,19 @@
-"use client"
+
+"use client";
+// import dynamic from "next/dynamic";
+
+// const CheckoutForm = dynamic(() => import("../ui/checkout"), { ssr: false });
+
 import Image from "next/image";
-import { useForm, SubmitHandler } from "react-hook-form"
-import { zodResolver } from '@hookform/resolvers/zod';
-import { z } from "zod"
+import { useForm, SubmitHandler } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { z } from "zod";
 import Link from "next/link";
 import { registerschema } from "../../types/zod/schema"
 import { signIn } from "next-auth/react"
 import { FaGoogle } from "react-icons/fa";
 import { FaGithub } from "react-icons/fa";
+// import CheckoutForm from "../ui/checkout";
 
 type FormFields = z.infer<typeof registerschema>
 

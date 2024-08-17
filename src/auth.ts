@@ -46,16 +46,16 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
         async session({ session }) {
             return session;
         },
-        async signIn({ user, account, profile, email, credentials }) {
+        async signIn({ account, profile, email, credentials }) {
             if (account.type === "credentials") {
                 return true;
             }
 
-            console.log("user", user);
-            console.log("account", account);
-            console.log("profile", profile);
-            console.log("email", email);
-            console.log("credentials", credentials);
+            // console.log("user", user);
+            // console.log("account", account);
+            // console.log("profile", profile);
+            // console.log("email", email);
+            // console.log("credentials", credentials);
             try {
                 const user = await prisma.user.findUnique({
                     where: {
