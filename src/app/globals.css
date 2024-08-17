@@ -2,6 +2,21 @@
 @tailwind components;
 @tailwind utilities;
 
+@keyframes typing {
+  from {
+    width: 0;
+  }
+
+  to {
+    width: 100%;
+  }
+}
+
+.typewriter-container {
+  @apply w-[20ch] overflow-hidden whitespace-nowrap border-r-2 border-black inline-block;
+  animation: typing 3s steps(20) forwards, blink 0.7s step-end infinite;
+}
+
 @layer base {
   :root {
     /* Custom CSS variables */
