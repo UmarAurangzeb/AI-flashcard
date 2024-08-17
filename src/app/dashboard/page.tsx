@@ -2,6 +2,7 @@ import Homepage from "@/components/component/homepage";
 import React from "react";
 import { auth } from "@/auth";
 import Link from "next/link";
+
 export default async function page() {
   const session = await auth();
   // console.log(session);

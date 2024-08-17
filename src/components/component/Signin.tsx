@@ -20,6 +20,7 @@ export default function Signin() {
   });
   const onSubmit: SubmitHandler<FormFields> = async (data) => {
     const { email, password } = data;
+
     try {
       const response: any = await signIn("credentials", {
         email,
@@ -79,7 +80,7 @@ export default function Signin() {
               className="bg-zinc-900 mt-4  my-3 border-[1px] rounded-sm hover:bg-zinc-950 py-2"
               type="submit"
             >
-              {isSubmitting ? "Submitting..." : "Sign Up"}
+              {isSubmitting ? "Submitting..." : "Sign In"}
             </button>
           </form>
         </div>
