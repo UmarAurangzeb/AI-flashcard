@@ -6,7 +6,7 @@ import Signup from "@/app/(authentication)/signup/page";
 export default function Home() {
   return (
     <>
-      <Signup />
+      this is homepage
     </>
   );
 }
