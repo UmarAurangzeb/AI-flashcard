@@ -1,6 +1,5 @@
 @tailwind base;
-@tailwind components;
-@tailwind utilities;
+
 
 @keyframes typing {
   from {
@@ -15,6 +14,14 @@
 .typewriter-container {
   @apply w-[20ch] overflow-hidden whitespace-nowrap border-r-2 border-black inline-block;
   animation: typing 3s steps(20) forwards, blink 0.7s step-end infinite;
+}
+
+body {
+  @apply bg-slate-300 text-white bg-gradient-to-r from-purple-800 to-slate-900
+}
+
+.btn-primary {
+  @apply bg-purple-900 mt-4 my-3 border-[1px] rounded-sm hover:bg-purple-500 py-2
 }
 
 @layer base {
@@ -73,4 +80,11 @@
     --chart-4: 280 65% 60%;
     --chart-5: 340 75% 55%;
   }
+
+
 }
+
+
+
+@tailwind components;
+@tailwind utilities;
