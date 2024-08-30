@@ -21,6 +21,7 @@ export default function homepage({ session }: any) {
   const [loading, setLoading] = useState(false);
   const [flashCards, setFlashCards] = useState([]);
   const [title, setTitle] = useState('');
+  const [isDialogOpen, setIsDialogOpen] = useState(false);
   const handleSavingFlashCards = async () => {
     const res = await fetch(`/dashboard/posttodb/api`, {
       method: 'POST',
@@ -33,13 +34,17 @@ export default function homepage({ session }: any) {
         flashCards: flashCards
       })
     })
-    if (!res.ok) {
+    if (!res.ok || res.status === 500) {
       console.log(res);
       console.log("error saving data");
       return;
     }
-    const result = await res.json();
-    console.log(result.message);
+    else if (res.status === 200) {
+      const result = await res.json();
+      setIsDialogOpen(false);
+    }
+
+
 
   }
 
@@ -63,7 +68,7 @@ export default function homepage({ session }: any) {
     }
     if (res.status == 200) {
       const result = await res.json();
-      const data = JSON.parse(result);
+      const data = result;
       setFlashCards(data.flashcards);
       console.log("result is", data.flashcards[0].front);
     }
@@ -93,7 +98,7 @@ export default function homepage({ session }: any) {
       </div>
       {loading && <img src="/rolling3.svg" alt="" className='mx-auto' />}
       <div className='flex flex-row gap-x-2'>
-        <Dialog>
+        <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen} >
           <DialogTrigger asChild>
             <button
               disabled={flashCards.length === 0}
@@ -102,10 +107,10 @@ export default function homepage({ session }: any) {
               Save Flashcards
             </button>
           </DialogTrigger>
-          <DialogContent className="sm:max-w-[425px] bg-black">
+          <DialogContent className="sm:max-w-[425px] bg-gradient-to-bl from-purple-500  to-purple-950">
             <DialogHeader>
               <DialogTitle>Save Cards</DialogTitle>
-              <DialogDescription>
+              <DialogDescription className='font-semibold'>
                 enter title for for the cards to save.
               </DialogDescription>
             </DialogHeader>
@@ -117,14 +122,14 @@ export default function homepage({ session }: any) {
                 <Input
                   id="name"
                   placeholder='title'
-                  className="col-span-3  text-black"
+                  className="col-span-3  text-black border-2 focus:border-slate-900 focus:outline-none outline-none"
                   value={title}
                   onChange={(e) => { setTitle(e.target.value); }}
                 />
               </div>
             </div>
             <DialogFooter>
-              <Button type="submit" onClick={handleSavingFlashCards}>Save changes</Button>
+              <Button type="submit" onClick={handleSavingFlashCards} className='bg-purple-500 font-semibold'>Save changes</Button>
             </DialogFooter>
           </DialogContent>
         </Dialog>

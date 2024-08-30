@@ -27,14 +27,21 @@ export async function POST(request: Request) {
                 7) If given a body of text, extract the most important and relevant information for the flashcards.
                 8) Generate exactly 8 flashcards.
                 9) **Return ONLY a valid JSON object** without any additional text, headers, or formatting. Ensure the JSON is structured exactly as follows:
-
+                
+                \`\`\`json
                 {
                     "flashcards": [
                         {"front": "Question 1", "back": "Answer 1"},
                         {"front": "Question 2", "back": "Answer 2"},
-                        ...
+                        {"front": "Question 3", "back": "Answer 3"},
+                        {"front": "Question 4", "back": "Answer 4"},
+                        {"front": "Question 5", "back": "Answer 5"},
+                        {"front": "Question 6", "back": "Answer 6"},
+                        {"front": "Question 7", "back": "Answer 7"},
+                        {"front": "Question 8", "back": "Answer 8"}
                     ]
                 }
+                \`\`\`
 
                 10) **Do not include any commentary, explanation, or extra information outside of this JSON object.** Only provide the JSON object in your response.
             `,
@@ -51,9 +58,8 @@ export async function POST(request: Request) {
             return Response.json({ message: "Error generating valid JSON response" }, { status: 500 });
         }
 
-        return Response.json(text, { status: 200 });
-    }
-    catch (err) {
+        return Response.json(jsonResponse, { status: 200 });
+    } catch (err) {
         console.error('Error generating response:', err);
         return Response.json({ message: "Error generating response" }, { status: 500 });
     }

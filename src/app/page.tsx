@@ -26,8 +26,8 @@ const cards = [
 export default function Home() {
   return (
     <>
-      <div className={`overflow-hidden bg-cover bg-center flex flex-col justify-center items-center`}>
-        <div className="flex flex-col items-center justify-center text-red-500 text-3xl lg:text-6xl mt-36">
+      <div className={`overflow-hidden bg-cover bg-center flex flex-col justify-center items-center mb-10`}>
+        <div className="flex flex-col items-center justify-center font-semibold text-red-500 text-3xl lg:text-6xl mt-36">
           <h1>
             <Typewriter
               options={{ loop: true }}
@@ -45,9 +45,6 @@ export default function Home() {
             Your go-to platform for mastering concepts with AI-powered flashcards.
           </h1>
           <div className="flex flex-row gap-x-3 text-sm md:text-md text-white mt-6">
-            <button className="md:w-32 md:h-12 py-2 w-28 border-2 rounded-2xl bg-red-600 hover:bg-red-700">
-              Subscribe
-            </button>
             <Link href="/dashboard">
               <button className="md:w-32 md:h-12 py-2 w-28 border-2 rounded-2xl bg-red-600 hover:bg-red-700">
                 Home
