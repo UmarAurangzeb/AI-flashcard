@@ -4,6 +4,10 @@ import FlashCard from './FlashCard';
 import { usePathname } from 'next/navigation'
 import { MdDeleteOutline } from "react-icons/md";
 import { useRouter } from 'next/navigation';
+import { motion } from "framer-motion"
+
+
+
 export default function MyCards({ ParsedCards }: any) {
     const pathname = usePathname()
     const [openCards, setOpenCards] = useState(false);
@@ -39,8 +43,6 @@ export default function MyCards({ ParsedCards }: any) {
 
     return (
         <div className=' flex flex-col'>
-
-
             <div className='max-w-6xl mx-auto '>
                 {
                     !openCards ? (
@@ -50,13 +52,25 @@ export default function MyCards({ ParsedCards }: any) {
                                 {
                                     ParsedCards.map((card, index) => {
                                         return (
-                                            <div key={index} className='w-96 h-12 flex justify-between items-center bg-gray-100 text-gray-500 rounded-md cursor-pointer hover:bg-slate-100 text-wrap my-2 px-2 border-[1px] border-gray-200 shadow-md '>
+                                            <motion.div
+
+                                                whileHover={{
+                                                    scale: 1.1,
+                                                    transition: {
+                                                        ease: 'linear',
+                                                        duration: 0.3
+                                                    }
+
+                                                }}
+
+
+                                                key={index} className='w-96 h-12 flex justify-between items-center bg-gray-100 text-gray-500 rounded-md cursor-pointer hover:bg-slate-100 text-wrap my-2 px-2 border-[1px] border-gray-200 shadow-md '>
                                                 <div className='text-gray-700 font-sans flex-grow' onClick={() => {
                                                     handleClick(index)
                                                 }
                                                 } >{card.title} </div>
                                                 <MdDeleteOutline className='text-red-600' onClick={() => handleDelete(card.owneremail, card.id)} />
-                                            </div>
+                                            </motion.div>
                                         );
                                     })
                                 }

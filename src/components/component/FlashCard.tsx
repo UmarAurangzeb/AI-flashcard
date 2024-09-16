@@ -1,7 +1,7 @@
 "use client";
 import React, { useEffect } from 'react';
 import { useState } from 'react';
-
+import { motion } from 'framer-motion';
 interface Flashcard {
     question: string;
     answer: string;
@@ -16,7 +16,24 @@ export default function FlashCard({ question, answer }: Flashcard) {
         };
     }, [question])
     return (
-        <div
+        <motion.div
+            key={question}
+            initial={{
+                opacity: 0,
+                x: "-100vw"
+
+            }}
+            transition={
+                {
+                    duration: 1,
+                    ease: "easeInOut",
+                    staggerChildren: 0.1,
+                }
+            }
+            animate={{
+                opacity: 1,
+                x: 0
+            }}
             className="h-56 w-56 relative cursor-pointer"
             onMouseEnter={() => setToggleQuestion(!toggleQuestion)}
             onMouseLeave={() => setToggleQuestion(!toggleQuestion)}
@@ -37,6 +54,6 @@ export default function FlashCard({ question, answer }: Flashcard) {
                     {!toggleQuestion ? question : answer}
                 </div>
             </div>
-        </div>
+        </motion.div>
     );
 }

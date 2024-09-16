@@ -17,11 +17,11 @@
 }
 
 body {
-  @apply bg-slate-300 text-white bg-gradient-to-r from-purple-800 to-slate-900
+  @apply bg-slate-300 text-white bg-gradient-to-r from-slate-600 to-slate-950
 }
 
 .btn-primary {
-  @apply bg-purple-900 mt-4 my-3 border-[1px] rounded-sm hover:bg-purple-500 py-2
+  @apply bg-slate-900 mt-4 my-3 border-[1px] rounded-sm hover:bg-sky-900 py-2
 }
 
 @layer base {

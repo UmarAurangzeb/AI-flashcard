@@ -14,6 +14,7 @@ import {
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import Link from 'next/link';
+import { motion } from 'framer-motion';
 
 export default function homepage({ session }: any) {
   console.log(session);
@@ -91,9 +92,17 @@ export default function homepage({ session }: any) {
       </div>
       <div className='flex flex-row flex-wrap gap-x-4 gap-y-3 mt-4 mx-auto w-full max-w-6xl justify-center mb-5'>
         {flashCards.map((element, index) => (
-          <div key={index} className=''>
+          <motion.div
+            variants={{
+              visible: {
+                transition: {
+                  staggerChildren: 0.1
+                }
+              }
+            }}
+            key={index} className=''>
             <FlashCard question={element.front} answer={element.back} />
-          </div>
+          </motion.div>
         ))}
       </div>
       {loading && <img src="/rolling3.svg" alt="" className='mx-auto' />}
@@ -107,7 +116,7 @@ export default function homepage({ session }: any) {
               Save Flashcards
             </button>
           </DialogTrigger>
-          <DialogContent className="sm:max-w-[425px] bg-gradient-to-bl from-purple-500  to-purple-950">
+          <DialogContent className="sm:max-w-[425px] bg-gradient-to-bl from-slate-500  to-slate-950">
             <DialogHeader>
               <DialogTitle>Save Cards</DialogTitle>
               <DialogDescription className='font-semibold'>
@@ -129,7 +138,7 @@ export default function homepage({ session }: any) {
               </div>
             </div>
             <DialogFooter>
-              <Button type="submit" onClick={handleSavingFlashCards} className='bg-purple-500 font-semibold'>Save changes</Button>
+              <Button type="submit" onClick={handleSavingFlashCards} className='bg-slate-800 font-semibold'>Save changes</Button>
             </DialogFooter>
           </DialogContent>
         </Dialog>

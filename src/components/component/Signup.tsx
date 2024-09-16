@@ -48,8 +48,8 @@ export default function Signup({
 
     return (
         <>
-            <div className="bg-cover w-screen h-screen flex justify-center items-center bg-slate-800 text-white">
-                <div className="bg-slate-900 w-3/5 md:w-2/5 h-fit py-6 pb-20 flex flex-col items-center max-w-2xl border-gray-50 border-[1px]">
+            <div className="bg-cover w-screen h-screen flex justify-center items-center  text-white">
+                <div className="bg-gradient-radial from-purple-950 to-slate-900 w-3/5 md:w-2/5 h-fit py-6 pb-20 flex flex-col items-center max-w-2xl border-gray-50 border-[1px]">
                     <h1 className="pt-14 font-semibold text-3xl font-serif">Sign Up</h1>
                     <form action="#" className="flex flex-col text-sm mt-10 md:w-2/3" onSubmit={handleSubmit(onSubmit)}>
                         <label htmlFor="email">Email</label>

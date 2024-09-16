@@ -44,6 +44,7 @@ export async function POST(request: Request) {
                 \`\`\`
 
                 10) **Do not include any commentary, explanation, or extra information outside of this JSON object.** Only provide the JSON object in your response.
+                11)REMINDING AGAIN **RETURN ONLY A VALID JSON object**
             `,
             prompt: data,
         });

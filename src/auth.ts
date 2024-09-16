@@ -34,7 +34,7 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
             if (user) {
                 const checkPassword = await bcrypt.compare(password, user.password);
                 if (checkPassword) {
-                    return { id: user.id, email: user.email };
+                    return { email: user.email };
                 }
                 throw new Error("Incorrect password");
             }
