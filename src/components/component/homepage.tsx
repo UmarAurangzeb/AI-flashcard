@@ -16,7 +16,7 @@ import { Label } from "@/components/ui/label"
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 
-export default function homepage({ session }: any) {
+export default function Homepage({ session }: any) {
   console.log(session);
   const [prompt, setPrompt] = useState('');
   const [loading, setLoading] = useState(false);

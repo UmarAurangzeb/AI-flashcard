@@ -1,4 +1,4 @@
-import Homepage from "@/components/component/homepage";
+import Homepage from "@/components/component/Homepage";
 import React from "react";
 import { auth } from "@/auth";
 import Link from "next/link";
